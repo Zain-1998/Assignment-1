@@ -1,0 +1,401 @@
+Assignment For Numpy
+Difficulty Level Beginner
+
+Import the numpy package under the name np
+In [1]:
+import numpy as np
+Create a null vector of size 10
+In [2]:
+arr = np.zeros((10))
+Create a vector with values ranging from 10 to 49
+In [3]:
+rng = np.arange(10,49)
+Find the shape of previous array in question 3
+In [4]:
+rng.shape
+Out[4]:
+(39,)
+Print the type of the previous array in question 3
+In [5]:
+rng.dtype
+Out[5]:
+dtype('int32')
+Print the numpy version and the configuration
+In [6]:
+print(np.__version__)
+print(np.show_config())
+1.18.1
+blas_mkl_info:
+    libraries = ['mkl_rt']
+    library_dirs = ['C:/ProgramData/Anaconda3\\Library\\lib']
+    define_macros = [('SCIPY_MKL_H', None), ('HAVE_CBLAS', None)]
+    include_dirs = ['C:\\Program Files (x86)\\IntelSWTools\\compilers_and_libraries_2019.0.117\\windows\\mkl', 'C:\\Program Files (x86)\\IntelSWTools\\compilers_and_libraries_2019.0.117\\windows\\mkl\\include', 'C:\\Program Files (x86)\\IntelSWTools\\compilers_and_libraries_2019.0.117\\windows\\mkl\\lib', 'C:/ProgramData/Anaconda3\\Library\\include']
+blas_opt_info:
+    libraries = ['mkl_rt']
+    library_dirs = ['C:/ProgramData/Anaconda3\\Library\\lib']
+    define_macros = [('SCIPY_MKL_H', None), ('HAVE_CBLAS', None)]
+    include_dirs = ['C:\\Program Files (x86)\\IntelSWTools\\compilers_and_libraries_2019.0.117\\windows\\mkl', 'C:\\Program Files (x86)\\IntelSWTools\\compilers_and_libraries_2019.0.117\\windows\\mkl\\include', 'C:\\Program Files (x86)\\IntelSWTools\\compilers_and_libraries_2019.0.117\\windows\\mkl\\lib', 'C:/ProgramData/Anaconda3\\Library\\include']
+lapack_mkl_info:
+    libraries = ['mkl_rt']
+    library_dirs = ['C:/ProgramData/Anaconda3\\Library\\lib']
+    define_macros = [('SCIPY_MKL_H', None), ('HAVE_CBLAS', None)]
+    include_dirs = ['C:\\Program Files (x86)\\IntelSWTools\\compilers_and_libraries_2019.0.117\\windows\\mkl', 'C:\\Program Files (x86)\\IntelSWTools\\compilers_and_libraries_2019.0.117\\windows\\mkl\\include', 'C:\\Program Files (x86)\\IntelSWTools\\compilers_and_libraries_2019.0.117\\windows\\mkl\\lib', 'C:/ProgramData/Anaconda3\\Library\\include']
+lapack_opt_info:
+    libraries = ['mkl_rt']
+    library_dirs = ['C:/ProgramData/Anaconda3\\Library\\lib']
+    define_macros = [('SCIPY_MKL_H', None), ('HAVE_CBLAS', None)]
+    include_dirs = ['C:\\Program Files (x86)\\IntelSWTools\\compilers_and_libraries_2019.0.117\\windows\\mkl', 'C:\\Program Files (x86)\\IntelSWTools\\compilers_and_libraries_2019.0.117\\windows\\mkl\\include', 'C:\\Program Files (x86)\\IntelSWTools\\compilers_and_libraries_2019.0.117\\windows\\mkl\\lib', 'C:/ProgramData/Anaconda3\\Library\\include']
+None
+Print the dimension of the array in question 3
+In [7]:
+print(rng.ndim)
+1
+Create a boolean array with all the True values
+In [8]:
+boolean = np.ones((10),dtype=bool)
+Create a two dimensional array
+In [9]:
+twoDim = np.zeros((10,10))
+print(twoDim.ndim)
+2
+Create a three dimensional array
+In [10]:
+threedim = np.zeros((10,10,10))
+print(threedim.ndim)
+3
+Difficulty Level Easy
+
+Reverse a vector (first element becomes last)
+In [11]:
+reverse = np.random.randn((10))
+print(reverse)
+reverse = np.flip(reverse)
+print(reverse)
+[-1.87633053  0.10492438  0.04702269  0.54372039  0.57359005 -0.60788642
+ -0.15647418  1.41196501  0.98235543  1.32561675]
+[ 1.32561675  0.98235543  1.41196501 -0.15647418 -0.60788642  0.57359005
+  0.54372039  0.04702269  0.10492438 -1.87633053]
+Create a null vector of size 10 but the fifth value which is 1
+In [12]:
+nullVector = np.array([1 if x == 4 else 0 for x in range(10)])
+print(nullVector)
+[0 0 0 0 1 0 0 0 0 0]
+Create a 3x3 identity matrix
+In [13]:
+identity = np.identity(3)
+print(identity)
+[[1. 0. 0.]
+ [0. 1. 0.]
+ [0. 0. 1.]]
+arr = np.array([1, 2, 3, 4, 5])
+Convert the data type of the given array from int to float
+
+In [14]:
+arr = np.array([1,2,3,4,5],dtype=float)
+arr.dtype
+Out[14]:
+dtype('float64')
+arr1 = np.array([[1., 2., 3.],
+
+            [4., 5., 6.]])  
+
+arr2 = np.array([[0., 4., 1.],
+
+           [7., 2., 12.]])
+Multiply arr1 with arr2
+
+In [15]:
+arr1 = np.array([[1., 2., 3.],[4., 5., 6.]])  
+arr2 = np.array([[0., 4., 1.],[7., 2., 12.]])
+arr1 * arr2
+Out[15]:
+array([[ 0.,  8.,  3.],
+       [28., 10., 72.]])
+arr1 = np.array([[1., 2., 3.],
+
+            [4., 5., 6.]]) 
+
+arr2 = np.array([[0., 4., 1.],
+
+            [7., 2., 12.]])
+Make an array by comparing both the arrays provided above
+
+In [16]:
+arr1 = np.array([[1., 2., 3.],[4., 5., 6.]]) 
+arr2 = np.array([[0., 4., 1.],[7., 2., 12.]])
+arr3 = arr1 == arr2
+print(arr3)
+[[False False False]
+ [False False False]]
+Extract all odd numbers from arr with values(0-9)
+In [17]:
+odd = np.arange(0,10)
+print(odd[odd % 2 != 0])
+[1 3 5 7 9]
+Replace all odd numbers to -1 from previous array
+In [18]:
+odd[odd % 2 != 0] = -1
+print(odd)
+[ 0 -1  2 -1  4 -1  6 -1  8 -1]
+arr = np.arange(10)
+Replace the values of indexes 5,6,7 and 8 to 12
+
+In [19]:
+arr = np.arange(10)
+arr[[5,6,7,8]] = 12
+print(arr)
+[ 0  1  2  3  4 12 12 12 12  9]
+Create a 2d array with 1 on the border and 0 inside
+In [20]:
+twoD = np.ones((4,4))
+twoD[1:-1,1:-1] = 0
+print(twoD)
+[[1. 1. 1. 1.]
+ [1. 0. 0. 1.]
+ [1. 0. 0. 1.]
+ [1. 1. 1. 1.]]
+Difficulty Level Medium
+
+arr2d = np.array([[1, 2, 3],
+
+            [4, 5, 6], 
+
+            [7, 8, 9]])
+Replace the value 5 to 12
+
+In [21]:
+arr2d = np.array([[1, 2, 3],
+                  [4, 5, 6], 
+                  [7, 8, 9]])
+arr2d = np.where(arr2d == 5,12,arr2d)
+print(arr2d)
+[[ 1  2  3]
+ [ 4 12  6]
+ [ 7  8  9]]
+arr3d = np.array([[[1, 2, 3], [4, 5, 6]], [[7, 8, 9], [10, 11, 12]]])
+Convert all the values of 1st array to 64
+
+In [22]:
+arr3d = np.array([
+    [
+        [1, 2, 3], 
+        [4, 5, 6]
+    ], 
+    [
+        [7, 8, 9], 
+        [10, 11, 12]
+    ]
+])
+arr3d[0][0] = 64
+print(arr3d)
+[[[64 64 64]
+  [ 4  5  6]]
+
+ [[ 7  8  9]
+  [10 11 12]]]
+Make a 2-Dimensional array with values 0-9 and slice out the first 1st 1-D array from it
+In [23]:
+arr2d = np.arange(0,10).reshape((2,5))
+print(arr2d)
+arr2d[0]
+[[0 1 2 3 4]
+ [5 6 7 8 9]]
+Out[23]:
+array([0, 1, 2, 3, 4])
+Make a 2-Dimensional array with values 0-9 and slice out the 2nd value from 2nd 1-D array from it
+In [24]:
+arr2d = np.arange(0,10).reshape((2,5))
+print(arr2d)
+arr2d[1][1]
+[[0 1 2 3 4]
+ [5 6 7 8 9]]
+Out[24]:
+6
+Make a 2-Dimensional array with values 0-9 and slice out the third column but only the first two rows
+In [25]:
+arr2d = np.arange(0,10).reshape((2,5))
+print(arr2d)
+arr2d[:,2]
+[[0 1 2 3 4]
+ [5 6 7 8 9]]
+Out[25]:
+array([2, 7])
+Create a 10x10 array with random values and find the minimum and maximum values
+In [26]:
+rand = np.random.randn((100)).reshape((10,10))
+print(f"Minimun Value {np.amin(rand)}")
+print(f"Maximum Value {np.amax(rand)}")
+Minimun Value -1.9793784033160442
+Maximum Value 2.631803959254411
+27. a = np.array([1,2,3,2,3,4,3,4,5,6]) b = np.array([7,2,10,2,7,4,9,4,9,8])
+Find the common items between a and b
+
+In [27]:
+a = np.array([1,2,3,2,3,4,3,4,5,6]) 
+b = np.array([7,2,10,2,7,4,9,4,9,8])
+print(f"Common Elements are : {np.intersect1d(a,b)}")
+Common Elements are : [2 4]
+a = np.array([1,2,3,2,3,4,3,4,5,6]) b = np.array([7,2,10,2,7,4,9,4,9,8])
+Find the positions where elements of a and b match
+
+In [28]:
+np.searchsorted(a, np.intersect1d(a, b))
+Out[28]:
+array([1, 5], dtype=int64)
+names = np.array(['Bob', 'Joe', 'Will', 'Bob', 'Will', 'Joe', 'Joe']) data = np.random.randn(7, 4)
+Find all the values from array data where the values from array names are not equal to Will
+
+In [29]:
+names = np.array(['Bob', 'Joe', 'Will', 'Bob', 'Will', 'Joe', 'Joe']) 
+data = np.random.randn(7, 4)
+print(data)
+print('==================================================')
+print(data[names != 'Will'])
+[[ 0.26015886  0.14551968 -1.42471182  0.23369864]
+ [-0.08307412 -0.23298414  0.80997339  0.6355014 ]
+ [-1.79662818  1.90901777 -1.25716953  1.27387474]
+ [ 1.77508224 -1.51248672 -0.27101806 -0.84264456]
+ [-0.16297191 -1.44476239  1.07938285  0.76842062]
+ [-0.23123939 -0.12123658  0.74779538  0.53571314]
+ [ 0.17262867  0.68813007  0.16804859 -1.22036579]]
+==================================================
+[[ 0.26015886  0.14551968 -1.42471182  0.23369864]
+ [-0.08307412 -0.23298414  0.80997339  0.6355014 ]
+ [ 1.77508224 -1.51248672 -0.27101806 -0.84264456]
+ [-0.23123939 -0.12123658  0.74779538  0.53571314]
+ [ 0.17262867  0.68813007  0.16804859 -1.22036579]]
+names = np.array(['Bob', 'Joe', 'Will', 'Bob', 'Will', 'Joe', 'Joe']) data = np.random.randn(7, 4)
+Find all the values from array data where the values from array names are not equal to Will and Joe
+
+In [30]:
+print(data)
+print('==================================================')
+mask = (names != 'Will') & (names!= 'Joe')
+print(data[mask])
+[[ 0.26015886  0.14551968 -1.42471182  0.23369864]
+ [-0.08307412 -0.23298414  0.80997339  0.6355014 ]
+ [-1.79662818  1.90901777 -1.25716953  1.27387474]
+ [ 1.77508224 -1.51248672 -0.27101806 -0.84264456]
+ [-0.16297191 -1.44476239  1.07938285  0.76842062]
+ [-0.23123939 -0.12123658  0.74779538  0.53571314]
+ [ 0.17262867  0.68813007  0.16804859 -1.22036579]]
+==================================================
+[[ 0.26015886  0.14551968 -1.42471182  0.23369864]
+ [ 1.77508224 -1.51248672 -0.27101806 -0.84264456]]
+Difficulty Level Hard
+
+Create a 2D array of shape 5x3 to contain decimal numbers between 1 and 15.
+In [31]:
+rand_arr = np.random.uniform(1,15, size=(5,3))
+print(rand_arr)
+[[ 5.82732705  8.9232657  14.27158878]
+ [ 8.12003185  5.89522248  7.72532318]
+ [ 8.31373123  1.80225497  4.72871451]
+ [10.48040363  2.77978989  6.11292984]
+ [ 9.17094267  1.63110506  8.17424914]]
+Create an array of shape (2, 2, 4) with decimal numbers between 1 to 16.
+In [32]:
+rand_arr2 = np.random.uniform(1,16, size=(2,2,4))
+print(rand_arr2)
+[[[ 7.34303962  8.25683766  8.89220973  7.79419757]
+  [ 8.58071496 12.27105178 12.16219773 10.90319507]]
+
+ [[15.2914298  14.57721307  3.07761882  5.68519534]
+  [14.37922672  6.08211252 14.52955805  1.77630218]]]
+Swap axes of the array you created in Question 32
+In [33]:
+print("Original Array")
+print(rand_arr2)
+print("Swapped Axes")
+print(np.swapaxes(rand_arr2, 2, 0))
+Original Array
+[[[ 7.34303962  8.25683766  8.89220973  7.79419757]
+  [ 8.58071496 12.27105178 12.16219773 10.90319507]]
+
+ [[15.2914298  14.57721307  3.07761882  5.68519534]
+  [14.37922672  6.08211252 14.52955805  1.77630218]]]
+Swapped Axes
+[[[ 7.34303962 15.2914298 ]
+  [ 8.58071496 14.37922672]]
+
+ [[ 8.25683766 14.57721307]
+  [12.27105178  6.08211252]]
+
+ [[ 8.89220973  3.07761882]
+  [12.16219773 14.52955805]]
+
+ [[ 7.79419757  5.68519534]
+  [10.90319507  1.77630218]]]
+Create an array of size 10, and find the square root of every element in the array, if the values less than 0.5, replace them with 0
+In [34]:
+arr = np.random.uniform(0,20, size=(10))
+arr = arr.astype('int32') 
+arr =np.sqrt(arr)
+arr = np.where(arr < 0.5, 0, arr)
+arr = arr.astype('int32')
+print(arr)
+[4 2 4 2 4 3 3 0 3 0]
+Create two random arrays of range 12 and make an array with the maximum values between each element of the two arrays
+In [35]:
+arr = np.random.uniform(0,20, size=(10))
+arr1 = np.random.uniform(0,20, size=(10))
+newArr = np.maximum(arr,arr1)
+print(f"Array 1 : {arr}")
+print(f"Array 2 : {arr1}")
+print(f"New Array : {newArr}")
+Array 1 : [18.06478735 12.45424418  2.83639716 17.48279515 14.69148973  1.218627
+  5.0180967  13.84681839  5.53454492 16.99628171]
+Array 2 : [19.05058843 12.21698269  1.64730575  8.47540525  3.13944067  7.25167844
+ 10.58097707 11.10530942 15.32105554  7.78125273]
+New Array : [19.05058843 12.45424418  2.83639716 17.48279515 14.69148973  7.25167844
+ 10.58097707 13.84681839 15.32105554 16.99628171]
+names = np.array(['Bob', 'Joe', 'Will', 'Bob', 'Will', 'Joe', 'Joe'])
+Find the unique names and sort them out!
+
+In [36]:
+names = np.array(['Bob', 'Joe', 'Will', 'Bob', 'Will', 'Joe', 'Joe'])
+print(np.sort(np.unique(names)))
+['Bob' 'Joe' 'Will']
+a = np.array([1,2,3,4,5]) b = np.array([5,6,7,8,9])
+From array a remove all items present in array b
+
+In [37]:
+a = np.array([1,2,3,4,5]) 
+b = np.array([5,6,7,8,9])
+c = np.setdiff1d(a, b)
+print(c)
+[1 2 3 4]
+Following is the input NumPy array delete column two and insert following new column in its place.
+sampleArray = numpy.array([[34,43,73],[82,22,12],[53,94,66]])
+
+newColumn = numpy.array([[10,10,10]])
+
+In [38]:
+sampleArray = np.array([
+    [34,43,73],
+    [82,22,12],
+    [53,94,66]
+])
+newColumn = np.array([[10,10,10]])
+sampleArray = np.delete(sampleArray, 2, axis=1)
+sampleArray = np.insert(sampleArray, 2, newColumn, axis=1)
+print(sampleArray)
+[[34 43 10]
+ [82 22 10]
+ [53 94 10]]
+x = np.array([[1., 2., 3.], [4., 5., 6.]]) y = np.array([[6., 23.], [-1, 7], [8, 9]])
+Find the dot product of the above two matrix
+
+In [39]:
+x = np.array([[1., 2., 3.], [4., 5., 6.]]) 
+y = np.array([[6., 23.], [-1, 7], [8, 9]])
+print(np.dot(x,y))
+[[ 28.  64.]
+ [ 67. 181.]]
+Generate a matrix of 20 random values and find its cumulative sum
+In [40]:
+arr = np.random.uniform(1,20,size=(4,5))
+arr = arr.astype('int32')
+print(arr.cumsum())
+[  7  14  31  49  62  66  71  72  77  90 104 109 122 127 130 137 150 163
+ 176 192]
